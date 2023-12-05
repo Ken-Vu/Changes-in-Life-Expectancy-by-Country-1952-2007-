@@ -5,7 +5,7 @@ An RShiny application showcasing changes in life expectancy by birth per country
 This RShiny dashboard (pictured below) allows the user to look at life expectancy rates at birth among different countries and how much they've changed from one year to another.  The data on life expectancy rates is plotted as an adjustable dumbbell plot where both ends of each dumbbell plotted represent data points for life expectancy rates at different years for a given country.
 For example, 
 
-!()[/snapshot_dashboard.jpg]
+![](https://raw.githubusercontent.com/Ken-Vu/Changes-in-Life-Expectancy-by-Country-1952-2007-/main/snapshot_dashboard.jpg?token=GHSAT0AAAAAACLHLJ7PQLZQUF6ULBPSKGBEZLPRGBQ)
 
 ## II. Instructions
 ### a. Using the Dashboard
