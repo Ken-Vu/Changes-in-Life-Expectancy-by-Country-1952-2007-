@@ -6,6 +6,7 @@ This RShiny dashboard (pictured below) allows the user to look at life expectanc
 For example, 
 
 !()[snapshot_dashboard.jpg]
+
 ## II. Instructions
 ### a. Using the Dashboard
 
