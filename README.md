@@ -10,7 +10,7 @@ Using the Filter toolbar to the left of the dashboard, the user can select the t
 
 For example, in this snapshot of the dashboard (see picture below), it's been adjusted to showcase changes in life expectancy for the selected and plotted countries `Bahrain`, `Chad`, `China`, `Egypt`, and `Indonesia` from the year 1962 (indicated by red-colored points) to the year 1987 (indicated on the graph as blue-colored points).  The red and blue points respectively show values for life expectancy at birth for those countries in 1962 and 1987 respectively with a grey line connecting the two together.
 
-![](https://raw.githubusercontent.com/Ken-Vu/Changes-in-Life-Expectancy-by-Country-1952-2007-/main/snapshot_dashboard.jpg?token=GHSAT0AAAAAACLHLJ7PQLZQUF6ULBPSKGBEZLPRGBQ)
+![](snapshot_dashboard.jpg){width=70%}
 
 ## II. Instructions
 ### a. Using the Dashboard
