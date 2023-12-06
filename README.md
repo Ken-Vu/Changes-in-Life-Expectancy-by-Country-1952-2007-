@@ -33,15 +33,47 @@ In addition, to be able to plot countries outside the selected continents you ch
 #### 3. The Countries Plotted
 Through the input box labeled under **Countries**, you can control which countries are plotted on the dashboard as long as the countries you want to plot are in the continents you selected in the checkbox list labeled under **Continent(s)** (as mentioned in the previous section).  Thus, to plot any countries, you should make sure you have at least one continent selected prior to plotting any countries.
 
-To select countries to plot, click on the input box labeled under **Countries**, which will display a scrollable dropdown menu listing all the countries you can plot.  Click on as many countries as you want to plot in the dropdown menu.  When you are done with your selections, you can click outside the input box and the dropdwon menu will close.  
+To select countries to plot, click on the input box labeled under **Countries**, which will display a scrollable dropdown menu listing all the countries you can plot.  Click on as many countries as you want to plot in the dropdown menu with a maxmum of 15 countries you can plot and display all at once.  When you are done with your selections, you can click outside the input box and the dropdwon menu will close.  
 
 In case you want to deslelect any country you chose to plot, you can click on the country you want to remove from the dashboard and press the backspace button on your keyboard to remove it.
 
+#### 4. Additional dashbaord adjustments
+Right above the dumbbell plot are a row of clickable grey icons that provide you additional ways to adjust and manipulate the way the dashbaord is displayed.  Such options including zooming in and out of the graph, downloading a snapshow of it, and autoscaling it to show the full dashboard. 
+
+------
+Now that you know how to use the *Filter* toolbar and the adjustment bar above the dumbbell plot, you should have the means to display life expectancy data on your dumbbell plot.  A quick note is that if you hover your mouse cursor over the points on each dumbbell, the data point you hover over will display a text box listing the name of the country, the value of life expectancy at that point, and the year that data point was recorded - all of which correspond to the data point you hover your mouse cursor over. 
+
 ### b. Running the Dashboard Locally
+To run the dashboard locally after downloading the Rcode for it, you need to first have installed the following packages (or at the very least, have the latest versions of them):
+`pacman`, `dplyr`, `ggplot2`, `gapminder`, `plotly`, `shiny`.
+
+You click on any of the names of the packages above to access the official R documentation for them in case you want to learn more about these packages and what features they have.
+
+Anyway, to install them, run the following command below in your R console or script:
+```{r}
+install.packages(c("pacman", "dplyr", "ggplot2", "gapminder", "plotly", "shiny"))
+```
+
+After installing the packages listed above, you can run this Shiny app by entering the directory in which he files for it are stored and run the following command below:
+```{r}
+shiny::runApp()
+```
 
 ## III. Data Set Used
+The data set is from the `gapminder` package, which in turn uses data from the website of the educational non-profit organization Gapminder.  You can click [here](https://www.gapminder.org/data/) to access the data section of the website for further details on the data set itself.
 
 ## IV. Tools Used
+The code was written in using RStudio 2023.09.0 Build 463 and the R programming language (version 4.3.1).
+
+The following libraries were used to develop this Shiny application:
+- `pacman`: a convenient package for loading and auto-updating packages all at once.
+- `dplyr`: a package that is part of the `tidyverse` set of packages (along with `ggplot2`) that provides advanced methods for wrangling with your data 
+- `ggplot2`: the data visualization package designed by Hadley Wickham that will be used to construct the dumbbell plot
+- `gapminder`: the package containing the *Gapminder* data set.
+- `plotly`: a package for creating unique and interactive plots.
+- `shiny`: the package for creating and deploying Shiny applications.
+
+You can click on any of them to get the official R documentation on them in case you want to learn more about them and their features.
 
 ## References
 ### a. Books
