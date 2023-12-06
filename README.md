@@ -16,6 +16,7 @@ For example, in this snapshot of the dashboard (see picture below), it's been ad
 ### a. Using the Dashboard
 Primarily through the *Filter* toolbar to the left of the dumbbell plot, you can customize and start displaying data on the dashboard through modifying the following aspects of it:
 
+------
 #### 1. The Years Plotted
 Through the slider labeled under **Year(s)**, you can control which two years in which you want to plot and compare life expectancy values for each country.  
 
@@ -44,7 +45,7 @@ Right above the dumbbell plot are a row of clickable grey icons that provide you
 Now that you know how to use the *Filter* toolbar and the adjustment bar above the dumbbell plot, you should have the means to display life expectancy data on your dumbbell plot.  A quick note is that if you hover your mouse cursor over the points on each dumbbell, the data point you hover over will display a text box listing the name of the country, the value of life expectancy at that point, and the year that data point was recorded - all of which correspond to the data point you hover your mouse cursor over. 
 
 ### b. Running the Dashboard Locally
-To run the dashboard locally after downloading the Rcode for it, you need to first have installed the following packages (or at the very least, have the latest versions of them):
+To run the dashboard locally after downloading the Rcode for it, you need to first have installed the following packages (or at the very least, have the latest versions of them): \n
 [`pacman`](https://www.rdocumentation.org/packages/pacman/), [`dplyr`](https://www.rdocumentation.org/packages/dplyr/), [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/), [`gapminder`](https://www.rdocumentation.org/packages/gapminder/), [`plotly`](https://www.rdocumentation.org/packages/plotly/), [`shiny`](https://www.rdocumentation.org/packages/shiny/).
 
 You click on any of the names of the packages above to access the official R documentation for them in case you want to learn more about these packages and what features they have.
@@ -65,7 +66,7 @@ The data set is from the [`gapminder`](https://www.rdocumentation.org/packages/g
 ## IV. Tools Used
 The code was written in using RStudio 2023.09.0 Build 463 and the R programming language (version 4.3.1).
 
-The following libraries were used to develop this Shiny application:
+The following libraries were used to develop this Shiny application: 
 - [`pacman`](https://www.rdocumentation.org/packages/pacman/) (ver. 0.5.1): a convenient package for loading and auto-updating packages all at once.
 - [`dplyr`](https://www.rdocumentation.org/packages/dplyr/) (ver. 1.1.3): a package that is part of the `tidyverse` set of packages (along with `ggplot2`) that provides advanced methods for wrangling with your data 
 - [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/) (ver. 3.4.3): the data visualization package designed by Hadley Wickham that will be used to construct the dumbbell plot
