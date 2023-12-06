@@ -45,7 +45,7 @@ Now that you know how to use the *Filter* toolbar and the adjustment bar above t
 
 ### b. Running the Dashboard Locally
 To run the dashboard locally after downloading the Rcode for it, you need to first have installed the following packages (or at the very least, have the latest versions of them):
-`pacman`, `dplyr`, `ggplot2`, `gapminder`, `plotly`, `shiny`.
+[`pacman`](https://www.rdocumentation.org/packages/pacman/versions/0.5.1), `dplyr`, `ggplot2`, `gapminder`, `plotly`, `shiny`.
 
 You click on any of the names of the packages above to access the official R documentation for them in case you want to learn more about these packages and what features they have.
 
@@ -66,7 +66,7 @@ The data set is from the `gapminder` package, which in turn uses data from the w
 The code was written in using RStudio 2023.09.0 Build 463 and the R programming language (version 4.3.1).
 
 The following libraries were used to develop this Shiny application:
-- `pacman`: a convenient package for loading and auto-updating packages all at once.
+- [`pacman`](https://www.rdocumentation.org/packages/pacman/versions/0.5.1): a convenient package for loading and auto-updating packages all at once.
 - `dplyr`: a package that is part of the `tidyverse` set of packages (along with `ggplot2`) that provides advanced methods for wrangling with your data 
 - `ggplot2`: the data visualization package designed by Hadley Wickham that will be used to construct the dumbbell plot
 - `gapminder`: the package containing the *Gapminder* data set.
@@ -77,5 +77,5 @@ You can click on any of them to get the official R documentation on them in case
 
 ## References
 ### a. Books
-- **[Modern Data Visualization with R](https://rkabacoff.github.io/datavis/index.html)** by Robert Kamacoff: <br/> [Chapter 8.2](https://rkabacoff.github.io/datavis/Time.html#dummbbell-charts) goes into more detail on dumbbell plots and how to graph them (which while helpfully, isn't compatible with `plotly`.  However, it does give you a sense of how to make your own and use them along with providing best practices for creating a variety of compelling data visualizations of your own, such as in Chapters 3-6, 10, 11, and 14.
+- **[Modern Data Visualization with R](https://rkabacoff.github.io/datavis/index.html)** by Robert Kamacoff: <br/> [Chapter 8.2](https://rkabacoff.github.io/datavis/Time.html#dummbbell-charts) goes into more detail on dumbbell plots and how to graph them (which while helpfully, is not compatible with `plotly`.  However, it does give you a sense of how to make your own and use them along with providing best practices for creating a variety of compelling data visualizations of your own, such as in Chapters 3-6, 10, 11, and 14.
 - **[Interactive Web-Based Data Visualization with R, plotly, and shiny](https://plotly-r.com/)** by Carson Sievert: <br/> [Chapter 25](https://plotly-r.com/controlling-tooltips) (especially in section 25.2) covers some techniques on how to modify and customize tooltips (i.e. the textbox that appears when you hover your mouse over a data point, graphed line, or any kind of object made with plotted data).  Chapters 5, 33, and 34 cover some ways to use the function `ggplotly()` to make your `ggplot2` graphs interactive along with the rest of the book showcasing what the `plotly` package in R can do in terms of making interactive graphs and geospacial maps.
