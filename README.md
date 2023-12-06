@@ -64,7 +64,7 @@ shiny::runApp()
 The data set is from the [`gapminder`](https://www.rdocumentation.org/packages/gapminder/) package, which in turn uses data from the website of the educational non-profit organization Gapminder.  You can click [here](https://www.gapminder.org/data/) to access the data section of the website for further details on the data set itself.
 
 ## IV. Tools Used
-The code was written in using RStudio 2023.09.0 Build 463 and the R programming language (version 4.3.1).
+The code was written with RStudio 2023.09.0 Build 463 and the R programming language (version 4.3.1).
 
 The following libraries were used to develop this Shiny application: 
 - **[`pacman`](https://www.rdocumentation.org/packages/pacman/)** (ver. 0.5.1): a convenient package for loading and auto-updating packages all at once.
