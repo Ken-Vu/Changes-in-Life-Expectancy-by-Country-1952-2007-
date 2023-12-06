@@ -45,9 +45,9 @@ Right above the dumbbell plot are a row of clickable grey icons that provide you
 Now that you know how to use the *Filter* toolbar and the adjustment bar above the dumbbell plot, you should have the means to display life expectancy data on your dumbbell plot.  A quick note is that if you hover your mouse cursor over the points on each dumbbell, the data point you hover over will display a text box listing the name of the country, the value of life expectancy at that point, and the year that data point was recorded - all of which correspond to the data point you hover your mouse cursor over. 
 
 ### b. Running the Dashboard Locally
-To run the dashboard locally after downloading the Rcode for it, you need to first have installed the following packages (or at the very least, have the latest versions of them): <br />
+To run the dashboard locally after downloading the Rcode for it, you need to first have installed the following packages (or at the very least, have the latest versions of them): <br /> <br />
 [`pacman`](https://www.rdocumentation.org/packages/pacman/), [`dplyr`](https://www.rdocumentation.org/packages/dplyr/), [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/), [`gapminder`](https://www.rdocumentation.org/packages/gapminder/), [`plotly`](https://www.rdocumentation.org/packages/plotly/), [`shiny`](https://www.rdocumentation.org/packages/shiny/).
-<br />
+<br /> <br /> <br />
 You click on any of the names of the packages above to access the official R documentation for them in case you want to learn more about these packages and what features they have.
 
 Anyway, to install them, run the following command below in your R console or script:
