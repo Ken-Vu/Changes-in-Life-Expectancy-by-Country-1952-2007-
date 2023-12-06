@@ -67,12 +67,12 @@ The data set is from the [`gapminder`](https://www.rdocumentation.org/packages/g
 The code was written in using RStudio 2023.09.0 Build 463 and the R programming language (version 4.3.1).
 
 The following libraries were used to develop this Shiny application: 
-- [`pacman`](https://www.rdocumentation.org/packages/pacman/) (ver. 0.5.1): a convenient package for loading and auto-updating packages all at once.
-- [`dplyr`](https://www.rdocumentation.org/packages/dplyr/) (ver. 1.1.3): a package that is part of the `tidyverse` set of packages (along with `ggplot2`) that provides advanced methods for wrangling with your data 
-- [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/) (ver. 3.4.3): the data visualization package designed by Hadley Wickham that will be used to construct the dumbbell plot
-- [`gapminder`](https://www.rdocumentation.org/packages/gapminder/) (ver. 1.0.0) the package containing the *Gapminder* data set.
-- [`plotly`](https://www.rdocumentation.org/packages/plotly/) (ver. 4.10.3): a package for creating unique and interactive plots.
-- [`shiny`](https://www.rdocumentation.org/packages/shiny/) (ver. 1.7.5): the package for creating and deploying Shiny applications.
+- **[`pacman`](https://www.rdocumentation.org/packages/pacman/)** (ver. 0.5.1): a convenient package for loading and auto-updating packages all at once.
+- **[`dplyr`](https://www.rdocumentation.org/packages/dplyr/)** (ver. 1.1.3): a package that is part of the [`tidyverse`](https://tidyverse.tidyverse.org/) set of packages (along with `ggplot2`) that provides advanced methods for wrangling with your data 
+- **[`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/)** (ver. 3.4.3): the data visualization package designed by Hadley Wickham that will be used to construct the dumbbell plot
+- **[`gapminder`](https://www.rdocumentation.org/packages/gapminder/)** (ver. 1.0.0) the package containing the *Gapminder* data set.
+- **[`plotly`](https://www.rdocumentation.org/packages/plotly/)** (ver. 4.10.3): a package for creating unique and interactive plots.
+- **[`shiny`](https://www.rdocumentation.org/packages/shiny/)** (ver. 1.7.5): the package for creating and deploying Shiny applications.
 
 You can click on any of them to get the official R documentation on them in case you want to learn more about them and their features.
 
