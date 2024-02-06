@@ -18,13 +18,13 @@ In addition, the user can look at summary statistics calculated across the chose
 
 ## II. Running the Dashboard Locally
 To run the dashboard locally after downloading the Rcode for it, you need to first have installed the following packages (or at the very least, have the latest versions of them): 
-[`pacman`](https://www.rdocumentation.org/packages/pacman/), [`dplyr`](https://www.rdocumentation.org/packages/dplyr/), [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/), [`gapminder`](https://www.rdocumentation.org/packages/gapminder/), [`plotly`](https://www.rdocumentation.org/packages/plotly/), [`shiny`](https://www.rdocumentation.org/packages/shiny/).
+[`pacman`](https://www.rdocumentation.org/packages/pacman/), [`dplyr`](https://www.rdocumentation.org/packages/dplyr/), [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/), [`gapminder`](https://www.rdocumentation.org/packages/gapminder/), [`quarto`](https://www.rdocumentation.org/packages/quarto/), [`plotly`](https://www.rdocumentation.org/packages/plotly/), [`shiny`](https://www.rdocumentation.org/packages/shiny/), [`tibble`](https://www.rdocumentation.org/packages/tibble/).
 <br /> <br /> <br />
 You click on any of the names of the packages above to access the official R documentation for them in case you want to learn more about these packages and what features they have.
 
 Anyway, to install them, run the following command below in your R console or script:
 ```{r}
-install.packages(c("pacman", "dplyr", "ggplot2", "gapminder", "plotly", "shiny"))
+install.packages(c("pacman", "dplyr", "ggplot2", "gapminder", "quarto", "plotly", "shiny", "tibble"))
 ```
 
 After installing the packages listed above, you can run this Shiny app by entering the directory in which he files for it are stored and run the following command below:
@@ -43,8 +43,10 @@ The following libraries were used to develop this Shiny application:
 - **[`dplyr`](https://www.rdocumentation.org/packages/dplyr/)** (ver. 1.1.3): a package that is part of the [`tidyverse`](https://tidyverse.tidyverse.org/) set of packages (along with `ggplot2`) that provides advanced methods for wrangling with your data 
 - **[`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/)** (ver. 3.4.3): the data visualization package designed by Hadley Wickham that will be used to construct the dumbbell plot
 - **[`gapminder`](https://www.rdocumentation.org/packages/gapminder/)** (ver. 1.0.0) the package containing the *Gapminder* data set.
+- **[`quarto`](https://www.rdocumentation.org/packages/quarto/)** (ver. 1.3.0): a package for working with and rendering Quarto documents
 - **[`plotly`](https://www.rdocumentation.org/packages/plotly/)** (ver. 4.10.3): a package for creating unique and interactive plots.
-- **[`shiny`](https://www.rdocumentation.org/packages/shiny/)** (ver. 1.7.5): the package for creating and deploying Shiny applications.
+- **[`shiny`](https://www.rdocumentation.org/packages/shiny/)** (ver. 1.7.5): a package for creating and deploying Shiny applications.
+- **[`tibble`](https://www.rdocumentation.org/packages/tibble/)** (ver. 3.2.1): a package for working with the data structure called *tibble* (a modern reimagining of the standard *data frame* in R).
 
 You can click on any of them to get the official R documentation on them in case you want to learn more about them and their features.
 
