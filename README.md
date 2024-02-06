@@ -24,7 +24,7 @@ You click on any of the names of the packages above to access the official R doc
 
 Anyway, to install them, run the following command below in your R console or script:
 ```{r}
-install.packages(c("pacman", "dplyr", "ggplot2", "gapminder", "quarto", "plotly", "shiny", "tibble"))
+install.packages(c("pacman", "dplyr", "ggplot2", "gapminder", "plotly", "quarto", "shiny", "tibble"))
 ```
 
 After installing the packages listed above, you can run this Shiny app by entering the directory in which he files for it are stored and run the following command below:
@@ -43,8 +43,8 @@ The following libraries were used to develop this Shiny application:
 - **[`dplyr`](https://www.rdocumentation.org/packages/dplyr/)** (ver. 1.1.3): a package that is part of the [`tidyverse`](https://tidyverse.tidyverse.org/) set of packages (along with `ggplot2`) that provides advanced methods for wrangling with your data 
 - **[`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/)** (ver. 3.4.3): the data visualization package designed by Hadley Wickham that will be used to construct the dumbbell plot
 - **[`gapminder`](https://www.rdocumentation.org/packages/gapminder/)** (ver. 1.0.0) the package containing the *Gapminder* data set.
-- **[`quarto`](https://www.rdocumentation.org/packages/quarto/)** (ver. 1.3.0): a package for working with and rendering Quarto documents
 - **[`plotly`](https://www.rdocumentation.org/packages/plotly/)** (ver. 4.10.3): a package for creating unique and interactive plots.
+- **[`quarto`](https://www.rdocumentation.org/packages/quarto/)** (ver. 1.3.0): a package for working with and rendering Quarto documents
 - **[`shiny`](https://www.rdocumentation.org/packages/shiny/)** (ver. 1.7.5): a package for creating and deploying Shiny applications.
 - **[`tibble`](https://www.rdocumentation.org/packages/tibble/)** (ver. 3.2.1): a package for working with the data structure called *tibble* (a modern reimagining of the standard *data frame* in R).
 
