@@ -1,6 +1,5 @@
 library(pacman)
-p_load(shiny, gapminder, plotly, latex2exp,
-       latex2exp, mathjaxr)
+p_load(shiny, gapminder, dplyr, tidyr, plotly)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -19,7 +18,8 @@ ui <- fluidPage(
     a("Modern Data Visualization with R", href = "https://rkabacoff.github.io/datavis/index.html"),
     "by Robert Kamacoff."),
     br(), 
-  p("You can access the code and instructions for this RShiny dashboard here:"),
+  p("You can access the code and instructions for this RShiny dashboard here:",
+    a("GitHub for this RShiny application", href = "https://github.com/Ken-Vu/Changes-in-Life-Expectancy-by-Country-1952-2007-/tree/main")),
   br(),
   
   # Sidebar with a slider input for number of bins 
@@ -45,16 +45,37 @@ ui <- fluidPage(
                   choices=c(),
                   multiple=T,
                   options = list(maxItems = 15),
-                  )
+                  ),
+      downloadButton("downloadReport", "Download report")
       
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
+      # Output: Tabset w/ plot, summary, and table ----
+      tabsetPanel(type = "tabs",
+                  tabPanel("Plot", 
+                           br(),
+                           downloadButton("downloadPlot", "Download plot"),
+                           plotlyOutput("dbPlot", width = "100%",
+                                                height = "100%")),
+                  
+                  tabPanel("Summary",
+                           br(),
+                           downloadButton("downloadSumTable", "Download summary"), 
+                           fluidRow(style = "padding: 0px 0px; margin-bottom: 0px;",
+                                    plotlyOutput("summaryTable", width = "100%",
+                                                 height = "100%")
+                                    )
+                           ),
+                  
+                  tabPanel("Data",
+                           br(),
+                           downloadButton("downloadData", "Download data"),
+                           plotlyOutput("dataLifeExp")))
+
+      )
       
-      plotlyOutput("dbPlot", width = "100%",
-                   height = "100%")
     )
     
   )
-)

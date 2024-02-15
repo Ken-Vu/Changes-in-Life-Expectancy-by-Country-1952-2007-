@@ -1,0 +1,331 @@
+---
+title: "Changes in Life Expectancy Report"
+subtitle: "Generated on `r format(lubridate::now(), '%B %d, %Y %H:%M %Z')`"
+format: pdf
+execute:
+  echo: false
+params:
+  yr_range: [1972, 1997]
+  countryList: ["Vietnam", "France", "China", "Germany", "Belgium", "Netherlands", "Poland"]
+editor: visual
+---
+
+```{r, echo=F, warning=F}
+# loading relevant libraries
+library(pacman)
+p_load(ggplot2, gapminder, dplyr, tidyr,     tibble, english)
+```
+
+# I. Introduction
+
+[Gapminder](https://www.gapminder.org) is an independent educational non-profit organization based out of Stockholm, Sweden that focuses on informing global audiences in areas related to long-term global development and progress. They provide learning tools, fact-based resources, and statistics that aim to elevate understanding of the global world and fight misconceptions about it.
+
+# II. An Overview of the Data
+
+For this report in particular, we will focus entirely on looking at values of life expectancy at birth across different countries from one year to another. We will use the `gapminder` package in R, which has a subset of the entire **Gapminder** data set.
+
+The entire `gapminder` data set has 1704 rows with the following four columns (out of six in total) that we will focus on primarily for this report:
+
+-   **country**: a factor with 142 nominal levels with each level name being the name of a country
+-   **continent**: a factor with five nominal levels (i.e., `Africa`, `Americas`, `Asia`, `Euorpe`, `Oceania`)
+-   **lifeExp**: the life expectancy at birth in years
+-   **year**: the year in which data was recorded. Note that this column ranges from 1952 to 2007 in five-year increments (i.e., 1952, 1957, 1962, etc)
+
+\newpage
+
+# III. Data Results
+
+## a. Dumbbell Plot
+
+```{r, results='asis'}
+# https://rmarkdown.rstudio.com/lesson-4.html
+# https://bookdown.org/yihui/rmarkdown-cookbook/results-asis.html
+
+# get years, continents, and countries
+yrSelect = params$yr_range
+countrySelect = params$countryList
+
+cat("For the year(s) **",
+    
+    # indicate years selected
+    paste0(yrSelect,
+           collapse = "** and **"),
+    
+    "**, we have selected ",
+    
+    sep = "")
+
+# check if countries selected
+if(length(countrySelect) > 0){
+  cat("the *",
+      
+        # output number of countries as 
+  # word if value less than 10
+  ifelse(length(countrySelect) < 10,
+         as.character(english(length(countrySelect))),
+         length(countrySelect)
+         ),
+      
+      "* countries **", sep = "")
+  
+  # print country choices depending on how many picked
+  if(length(countrySelect) > 2){
+    cat(paste0(countrySelect[1:length(countrySelect) - 1],
+               collapse = "**, **"), 
+        "**, and **",
+        countrySelect[length(countrySelect)],
+        sep = "")
+  }
+  else{
+    cat(paste0(countrySelect,
+               collapse = "** and **"), sep = "")
+  }
+  
+  cat("**.", sep = "")
+  
+} else {
+  cat("**no countries**.", sep = "")
+}
+```
+
+```{r, results='asis'}
+cat("Given the selections made, we have", sep = "")
+
+# check if no list of countries prior to plot dumbbell plot
+if(length(countrySelect) < 1){
+  cat(" no dumbbell plot.")
+  
+} else{
+  cat(" the following dumbbell plot:\n", sep = "")
+}
+```
+
+```{r}
+# add dumbbell plot if there are countries selected
+if(length(countrySelect) > 1){
+  plotdata_long <-
+        gapminder |>
+        filter(country %in% countrySelect &
+               year %in% yrSelect)
+  
+  if(yrSelect[1] != yrSelect[2]){
+    plotdata_long <- plotdata_long |>
+          mutate(paired = rep(c(1:(n()/2)), each = 2),
+                 year = factor(year))
+  }
+
+  # plot the data
+  ggplot(plotdata_long,
+             aes(
+                # sort countries in alphabetical order
+                 y = factor(country,
+                            levels =sort(levels(country),
+                                         decreasing =T)),
+                 x = lifeExp)) +
+        geom_line(aes(group = paired),
+                  color = "grey") +
+        geom_point(aes(color = year),
+                   size = 4) +
+        theme_minimal() +
+          theme(legend.position = "top",
+                axis.title.y = element_blank()) +
+        labs(x = "Life Expectancy (yrs)",
+             y = "Country",
+             color = "Year",
+             caption = "Source: gapminder")
+}
+```
+
+\newpage
+
+## b. Summary Statistics
+
+```{r, results='asis'}
+# check if any countries selected
+if(length(countrySelect) < 1){
+  cat("Since **no countries** were selected, no summary tables for your selection(s) can be generated.")
+} else if(length(countrySelect) == 1){
+  cat("Since only **one country** was selected, no summary tables for your selection(s) can be generated.")
+} else{
+  cat("Here are summary statistics across the life expectancies of the *",
+      
+  # output number of countries as 
+  # word if value less than 10
+  ifelse(length(countrySelect) < 10,
+         as.character(english(length(countrySelect))),
+         length(countrySelect)
+         ),
+  "* countries ", sep = "")
+  
+  # TO DO: write all names of countries
+  # check if countries selected
+  cat("**")
+    
+    # print country choices depending on how many picked
+  if(length(countrySelect) > 2){
+    cat(paste0(countrySelect[1:length(countrySelect) - 1],
+        collapse = "**, **"), 
+          "**, and **",
+        countrySelect[length(countrySelect)],
+        sep = "")
+  }
+  else{
+    cat(paste0(countrySelect,
+               collapse = "** and **"), sep = "")
+  }
+    
+  cat("** ", sep = "")
+    
+
+  cat("for the year(s) **",
+    
+    # indicate years selected
+    paste0(yrSelect,
+           collapse = "** and **"),
+    
+    "**:",
+    
+    sep = "")
+} 
+```
+
+```{r, warning=F}
+# printing out summary stats if countries
+# selected
+if(length(countrySelect) > 1){
+  tempTable <- gapminder |>
+          filter(year %in% yrSelect & country %in% countrySelect) |>
+          group_by(year) |>
+          summarise(`Minimum` = min(lifeExp),
+                    `1st Quantile` = quantile(lifeExp, 0.25),
+                    `Median` = median(lifeExp),
+                    `Mean` = mean(lifeExp),
+                    `3rd Quantile` = quantile(lifeExp, 0.75),
+                    `Maximum` = max(lifeExp),
+                    `Standard Deviation` = sd(lifeExp)
+          ) |>
+
+          # round each column to two places
+          mutate_at(vars(-year), list(~round(., 2))) |>
+
+          # transpose table
+          t() |>
+          as.data.frame(stringsAsFactors = F, header=T) |>
+          rownames_to_column("Metric Name")
+
+        # rename columns
+        # depends on how many years picked
+        if(yrSelect[1] == yrSelect[2]){
+          colnames(tempTable) <- c("Metric", yrSelect[1])
+        }  else{
+          colnames(tempTable) <- c("Metric", yrSelect)
+        }
+
+        # return formatted tibble
+        tempTable[-1,] |>
+          as.tibble() |>
+          knitr::kable()
+}
+```
+
+```{r, results='asis'}
+# Get the data 
+if(length(countrySelect) > 1){
+  maxmin_Table <- plotdata_long |>
+    group_by(year) |> 
+    filter(lifeExp == min(lifeExp) | 
+             lifeExp == max(lifeExp)) |> 
+    arrange(desc(lifeExp), .by_group = T)
+  
+  cat(
+    "For the year **", yrSelect[1],
+    "**, the **maximum** life expectancy came from the country **", 
+    as.character(maxmin_Table[1,c("country")][[1]]),
+    "** with the value of **",
+    maxmin_Table[1,c("lifeExp")][[1]],
+    " years**.  ",
+    
+    "\nThe **minmium** life expectancy for that year came from the country **",
+    as.character(maxmin_Table[2,c("country")][[1]]),
+    "** with the value of **",
+    maxmin_Table[2,c("lifeExp")][[1]],
+    " years**.\n\n\n\n\n",
+    
+      sep = "")
+  
+  if(yrSelect[1] != yrSelect[2]){
+    cat(
+    "For the year **", yrSelect[2],
+    "**, the **maximum** life expectancy came from the country **", 
+    as.character(maxmin_Table[3,c("country")][[1]]),
+    "** with the value of **",
+    maxmin_Table[3,c("lifeExp")][[1]],
+    " years**.  ",
+    
+    "\nThe **minimium** life expectancy for that year came from the country **",
+    as.character(maxmin_Table[4,c("country")][[1]]),
+    "** with the value of **",
+    maxmin_Table[4,c("lifeExp")][[1]],
+    " years**.\n\n",
+    
+      sep = "")
+  }
+  
+}
+```
+
+\newpage
+
+## c. Widened Data Subset
+
+```{r, results='asis'}
+cat("For the year(s) **",
+    
+    # indicate years selected
+    paste0(yrSelect,
+           collapse = "** and **"),
+    
+    "**, we have ",
+    
+    sep = "")
+
+if(length(countrySelect) < 1){
+  cat("no full data set since **no countries** were selected.", sep = "")
+} else{
+  cat("the full data subset consisting of a pair of life expectancy values (in years) for each of the *",
+      
+        # output number of countries as 
+  # word if value less than 10
+  ifelse(length(countrySelect) < 10,
+         as.character(english(length(countrySelect))),
+         length(countrySelect)
+         ),
+      
+      "* countries below:", sep = "")
+}
+```
+
+```{r}
+# plot the data table if it exists
+if(length(countrySelect) >= 1){
+    plotdata_long |>
+    select(continent, country, year, lifeExp) |>
+    arrange(continent, country) |>
+
+    # pivot wider to compare data between years
+    rename(Continent = continent,
+           Country = country) |>
+    pivot_wider(names_from = year,
+                names_glue = "Life Expectancy in {year} (yrs)",
+                values_from = lifeExp) |>
+    # round each column to two places
+    mutate_at(vars(-Country, -Continent), list(~round(., 2))) |>
+    knitr::kable()
+}
+```
+
+\newpage
+
+# Data Source
+
+The [`gapminder`](https://cran.r-project.org/web/packages/gapminder/index.html) package in R contains a subset of the Gapminder data set available at <https://www.gapminder.org/data/>. This data subset has 142 countries with columns for a country's life expectancy, Gross Domestic Product (GDP) per capita, and population in five-year increments from 1952 to 2007.
