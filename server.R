@@ -343,12 +343,6 @@ server <- function(input, output, session) {
     filename = "report.pdf",
     content = function(file){
       
-      # save ggplot2 objects to images
-      ggsave("dbplot.jpg", plot = db_plot(),
-             width = 8, height = 5,
-             device = "jpg")
-      
-      
       # save table 
       
       # get parameters

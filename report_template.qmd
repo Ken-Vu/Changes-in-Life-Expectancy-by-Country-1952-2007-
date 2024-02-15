@@ -100,9 +100,9 @@ if(length(countrySelect) < 1){
 }
 ```
 
-```{r}
+```{r, warning=F, message=F}
 # add dumbbell plot if there are countries selected
-if(length(countrySelect) > 1){
+if(length(countrySelect) >= 1){
   plotdata_long <-
         gapminder |>
         filter(country %in% countrySelect &
@@ -112,6 +112,11 @@ if(length(countrySelect) > 1){
     plotdata_long <- plotdata_long |>
           mutate(paired = rep(c(1:(n()/2)), each = 2),
                  year = factor(year))
+  }
+  else{
+    plotdata_long <- plotdata_long |>
+      mutate(paired = c(1:n()),
+             year = factor(year))
   }
 
   # plot the data
