@@ -19,8 +19,8 @@ In addition, the user can look at summary statistics calculated across the chose
 ## II. Running the Dashboard Locally
 To run the dashboard locally after downloading the Rcode for it, you need to first have installed the following packages (or at the very least, have the latest versions of them): 
 [`pacman`](https://www.rdocumentation.org/packages/pacman/), [`dplyr`](https://www.rdocumentation.org/packages/dplyr/), [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/), [`gapminder`](https://www.rdocumentation.org/packages/gapminder/), [`quarto`](https://www.rdocumentation.org/packages/quarto/), [`plotly`](https://www.rdocumentation.org/packages/plotly/), [`shiny`](https://www.rdocumentation.org/packages/shiny/), [`tibble`](https://www.rdocumentation.org/packages/tibble/).
-<br /> <br /> <br />
-You click on any of the names of the packages above to access the official R documentation for them in case you want to learn more about these packages and what features they have.
+<br /> <br /> 
+You can click on any of the names of the packages above to access the official R documentation for them in case you want to learn more about these packages and what features they have.
 
 Anyway, to install them, run the following command below in your R console or script:
 ```{r}
