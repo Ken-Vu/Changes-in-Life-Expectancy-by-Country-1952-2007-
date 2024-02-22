@@ -1,6 +1,6 @@
 library(pacman)
 library(shiny)
-p_load(ggplot2, gapminder, dplyr, tidyr, tibble)
+p_load(ggplot2, gapminder, dplyr, plotly, tidyr, tibble)
 
 
 # Define server logic required to draw a dumbbell plot
