@@ -343,6 +343,7 @@ server <- function(input, output, session) {
     filename = "report.pdf",
     content = function(file){
       
+      
       # save table 
       
       # get parameters

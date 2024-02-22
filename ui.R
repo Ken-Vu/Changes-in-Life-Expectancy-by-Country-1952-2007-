@@ -1,5 +1,6 @@
 library(pacman)
-p_load(shiny, gapminder, dplyr, tidyr, plotly)
+p_load(ggplot2, gapminder, dplyr, tidyr, plotly, 
+       tibble)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
