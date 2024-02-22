@@ -1,7 +1,7 @@
 # Changes-in-Life-Expectancy-by-Country-1952-2007-
 An RShiny application showcasing changes in life expectancy by birth per country within the timeframe 1952-2007 using data from the `gapminder` package in R.
 
-You can access the RShiny dashboard here: 
+You can access the RShiny dashboard here: [https://kenvu.shinyapps.io/Changes-in-Life-Expectancy-by-Country-1952-2007-/](https://kenvu.shinyapps.io/Changes-in-Life-Expectancy-by-Country-1952-2007-/)
 
 ## I. Description
 This RShiny dashboard (pictured below) allows the user to look at life expectancy rates at birth among different countries and how much they've changed from one year to another.  The data on life expectancy rates is plotted as an adjustable dumbbell plot where both ends of each dumbbell plotted represent data points for life expectancy rates at different years for a given country; this dumbbell plot is based off the dumbbell plot presented in Chapter 8.2 of the book [Modern Data Visualization with R](https://rkabacoff.github.io/datavis/index.html) by Robert Kamacoff, which is available online for free and (possibly) Amazon for purchase as a physical book. 
