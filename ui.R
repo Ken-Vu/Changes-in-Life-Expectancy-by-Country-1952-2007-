@@ -1,6 +1,5 @@
 library(pacman)
-p_load(ggplot2, gapminder, dplyr, tidyr, plotly, 
-       tibble)
+p_load(ggplot2, gapminder, dplyr, tidyr, tibble)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -64,16 +63,19 @@ ui <- fluidPage(
                   tabPanel("Summary",
                            br(),
                            downloadButton("downloadSumTable", "Download summary"), 
+                           br(),
+                           br(),
                            fluidRow(style = "padding: 0px 0px; margin-bottom: 0px;",
-                                    plotlyOutput("summaryTable", width = "100%",
-                                                 height = "100%")
+                                    tableOutput("summaryTable")
                                     )
                            ),
                   
                   tabPanel("Data",
                            br(),
                            downloadButton("downloadData", "Download data"),
-                           plotlyOutput("dataLifeExp")))
+                           br(),
+                           br(),
+                           tableOutput("dataLifeExp")))
 
       )
       

@@ -1,7 +1,6 @@
 library(pacman)
 library(shiny)
-p_load(ggplot2, gapminder, dplyr, tidyr, plotly, 
-       tibble)
+p_load(ggplot2, gapminder, dplyr, tidyr, tibble)
 
 
 # Define server logic required to draw a dumbbell plot
@@ -102,12 +101,11 @@ server <- function(input, output, session) {
         
         # round each column to two places
         mutate_at(vars(-year), list(~round(., 2))) |> 
-        
         # transpose table
-        t() |> 
+        t() |>
         as.data.frame(stringsAsFactors = F, header=T) |>
         rownames_to_column("Metric Name")
-      
+
       # rename columns
       # depends on how many years picked
       if(input$yr_range[1] == input$yr_range[2]){
@@ -116,10 +114,10 @@ server <- function(input, output, session) {
       else{
         colnames(tempTable) <- c("Metric", input$yr_range)
       }
-      
+
       # return formatted tibble
       tempTable[-1,] |>
-        as.tibble()
+        as_tibble()
       
     }
     
@@ -141,21 +139,10 @@ server <- function(input, output, session) {
   })
   
   # render summary table
-  output$summaryTable <- renderPlotly({
+  output$summaryTable <- renderTable({
     
     # create summary table
-    summaryTable <- sumTable()
-    # recolor the cells
-    plot_ly(
-      columnwidth = c(5, 5, 5),
-      align = c("center"),
-      type="table",
-      header=list(values=names(summaryTable),
-                  line = list(width = 1, color = 'black'),
-                  fill = list(color = c("#119DFF", "#119DFF")),
-                  font = list(color = "white")
-      ), 
-      cells=list(values=unname(summaryTable)))
+    sumTable()
     
   }) 
 
@@ -216,21 +203,11 @@ server <- function(input, output, session) {
   })
   
   # output data to plotly
-  output$dataLifeExp <- renderPlotly({
+  output$dataLifeExp <- renderTable({
     
-    plotdata_table <- dataSubset()
+    dataSubset()
     # SOURCE: https://plotly.com/ggplot2/dumbbell-plots/
     
-    plot_ly(
-            columnwidth = c(50, 50, 75, 75),
-            align = c("center"),
-            type="table",
-            header=list(values=names(plotdata_table),
-                        line = list(width = 1, color = 'black'),
-                        fill = list(color = c("#119DFF", "#119DFF")),
-                        font = list(color = "white")
-                        ), 
-            cells=list(values=unname(plotdata_table)))
     
   })
   
