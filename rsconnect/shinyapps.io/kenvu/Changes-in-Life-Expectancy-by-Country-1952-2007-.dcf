@@ -1,0 +1,13 @@
+name: Changes-in-Life-Expectancy-by-Country-1952-2007-
+title: Changes-in-Life-Expectancy-by-Country-1952-2007-
+username: kenvu
+account: kenvu
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11232407
+bundleId: 8293375
+url: https://kenvu.shinyapps.io/Changes-in-Life-Expectancy-by-Country-1952-2007-/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: report_template.pdf|snapshot_dashboard.jpg|test_script_quarto.R
